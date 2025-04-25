@@ -2,9 +2,40 @@
   text-align: center;
 }
 
+.App-logo-container {
+  width: 52px;
+}
+
 .App-logo {
-  height: 40vmin;
+  width: 100%;
+  height: auto;
   pointer-events: none;
+  border-radius: 50%;
+  margin-top: 6px;
+}
+header {
+
+  ul{
+    display: flex;
+    margin-right: 2rem;
+    li {
+      list-style:none;
+      width: 9rem;
+      font-size: 1.4rem;
+    }
+
+  }
+
+  a{
+    color: white;
+  }
+}
+
+main {
+  width: 100vw;
+  min-height: 70vh;
+  height: auto;
+  background-color: rgb(52, 65, 77);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -15,11 +46,10 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 64px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   font-size: calc(10px + 2vmin);
   color: white;
 }

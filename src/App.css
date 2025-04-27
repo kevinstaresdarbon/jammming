@@ -36,6 +36,7 @@ main {
   min-height: 70vh;
   height: auto;
   background-color: rgb(52, 65, 77);
+  font-size: 72px;
 }
 
 @media (prefers-reduced-motion: no-preference) {

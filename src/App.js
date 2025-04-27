@@ -8,8 +8,8 @@ import './App.css';
 
 function App() {
 
-  async function handleSearchSubmit() {
-
+  async function handleSearchSubmit(e) {
+    e.preventDefault();
   }
 
   return (
@@ -19,22 +19,21 @@ function App() {
           <figure className='App-logo-container'>
             <img src={logo} className="App-logo" alt="logo: A spinning star" />
           </figure>
-          <Search />
+          <Search handleSearchSubmit={handleSearchSubmit} />
           <nav>
             <ul>
-              <li><a href='#'>Login with Spotify</a></li>
+              <li><a href='https://jammin_api.unchained.vip/api/login'>Login with Spotify</a></li>
             </ul>
           </nav>
         </header>
         <main>
           <Routes>
-            <Route exact path='/' component={HomePage} />
-            <Route path='/dashboard' component={Dashboard} />
+            <Route exact path='/' element={<HomePage />} />
+            <Route path='/dashboard' element={<Dashboard />} />
           </Routes>
         </main>
       </div>
     </Router>
-
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import Search from '../Search/Search';
+import TrackListings from '../TrackListings/TrackListings';
 
 export default function Dashboard({ profile, isAppLoading }) {
 
@@ -8,7 +9,6 @@ export default function Dashboard({ profile, isAppLoading }) {
 
 
     return (
-
         <main>
             <section className='greeting'>
                 {(isAppLoading) ? (
@@ -20,6 +20,9 @@ export default function Dashboard({ profile, isAppLoading }) {
             < section className='search' >
                 <Search setTracklist={setTracklist} />
             </section >
+            <section>
+                <TrackListings trackArray={tracklist} />
+            </section>
         </main >
     );
 };

@@ -2,5 +2,9 @@ import React from 'react';
 
 export default function HomePage() {
 
-    return <h1>This is the HomePage!!!</h1>;
+    return (
+        <main>
+            <h1>This is the HomePage!!!</h1>
+        </main>  
+    );
 };

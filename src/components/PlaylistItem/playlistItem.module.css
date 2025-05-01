@@ -1,21 +1,14 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: darkslateblue;
-    margin: 4px;
-    border: 2px solid gray;
-    border-radius: 8px;
-}
-
-.track_item {
+.play_item {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 560px;
-    height: auto;
+    width: 660px;
+    height: max-content;
     background-color: darkslateblue;
+    margin: 4px;
+    border: 2px solid gray;
+    border-radius: 8px;
 }
 
 .item {
@@ -61,7 +54,7 @@
     }
 }
 
-.add {
+.remove {
     font-size: 28px;
     margin: 10px;
     border: 2px solid darkslategray;

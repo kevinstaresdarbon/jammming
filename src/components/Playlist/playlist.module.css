@@ -1,4 +1,4 @@
 .container {
     margin: 8px 0 8px 0;
-    max-height: min-content;
+    max-height: fit-content;
 }

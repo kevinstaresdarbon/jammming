@@ -1,16 +1,18 @@
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import TrackItem from './TrackItem';
+import styles from './trackItem.module.css';
 
-export default function TrackItemContainer({trackInfo}) {
+export default function TrackItemContainer({ trackInfo, addPlaylistItem }) {
 
-    const [trackId, setTrackId] = useState(trackInfo.id);
-    const [trackName, setTrackName] = useState(trackInfo.name);
-    const [artist, setArtist] = useState(trackInfo.artist);
-    const [images, setImages] = useState(trackInfo.images);
-    const [albumName, setAlbumName] = useState(trackInfo.albumName);
-    const [popularity, setPopularity] = useState(trackInfo.popularity);
-    const [uri, setUri] = useState(trackInfo.uri);
+    function handleClick() {
+        addPlaylistItem(trackInfo);
+    }
 
-    return <TrackItem id={trackId} name={trackName} albumName={albumName} artist={artist} thumbnail={images[2].url} popularity={popularity} uri={uri} />
+    return (
+        <section className={styles.container}>
+            <TrackItem id={trackInfo.id} key={trackInfo.id} name={trackInfo.name} albumName={trackInfo.albumName} artist={trackInfo.artist} thumbnail={trackInfo.images[2].url} addPlaylistItem={addPlaylistItem} />
+            <button className={styles.add} type='button' onClick={handleClick} >➕</button>
+        </section>
 
+    )
 }

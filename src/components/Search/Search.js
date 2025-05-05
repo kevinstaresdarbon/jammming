@@ -38,6 +38,7 @@ export default function Search({ setTracklist }) {
                 className={styles.searchbar}
                 type='text'
                 maxlength='42'
+                id='search_bar'
                 placeholder={`Search the spotify api`}
                 value={input}
                 onChange={({ target }) => setInput(target.value)}

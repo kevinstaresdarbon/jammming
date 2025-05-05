@@ -21,6 +21,26 @@ export default function Dashboard({ profile, isAppLoading }) {
         setPlaylist(filtered);
     }
 
+    function handleMoveUp(myIndex){
+        setPlaylist((prev) => {
+            let playlistBeforeMove = prev.slice(0, myIndex-1);
+            let switchedArray = prev.slice(myIndex-1, myIndex+1).reverse();
+            let playlistAfterMove = prev.slice(myIndex+1, prev.length);
+
+            return [...playlistBeforeMove, ...switchedArray, ...playlistAfterMove];
+        });
+    }
+
+    function handleMoveDown(myIndex){
+        setPlaylist((prev) => {
+            let playlistBeforeMove = prev.slice(0, myIndex);
+            let switchedArray = prev.slice(myIndex, myIndex+2).reverse();
+            let playlistAfterMove = prev.slice(myIndex+2, prev.length);
+
+            return [...playlistBeforeMove, ...switchedArray, ...playlistAfterMove];
+        });
+    }
+
     return (
         <main>
             <section className='greeting'>
@@ -39,7 +59,7 @@ export default function Dashboard({ profile, isAppLoading }) {
                     <TrackListings trackArray={tracklist} addPlaylistItem={addPlaylistItem} />
                 </section>
                 <section className={styles.playlist_container} >
-                    <Playlist trackArray={playlist} removePlaylistItem={removePlaylistItem} />
+                    <Playlist trackArray={playlist} removePlaylistItem={removePlaylistItem} handleMoveUp={handleMoveUp} handleMoveDown={handleMoveDown} />
                 </section>
             </section>
 

@@ -54,9 +54,21 @@
     }
 }
 
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .remove {
     font-size: 28px;
     margin: 10px;
     border: 2px solid darkslategray;
     color: darkslategray;
+}
+
+.move {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
